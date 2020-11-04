@@ -15,11 +15,14 @@ button {
 
 .hide {
     display: none;
+    animation-name: hide;
+    animation-duration: 0.8s;
 }
+
 
 .container {
     max-width: 1200px;
-    margin: auto;
+    margin: 0 auto;
 }
 
 .header {
@@ -27,6 +30,7 @@ button {
     align-items: center;
     justify-content: space-between;
     margin-bottom: 40px;
+
 }
 
 .input {
@@ -442,6 +446,8 @@ button {
 
 .is-open {
     display: flex;
+    animation-name: show;
+    animation-duration: .8s;
 }
 
 .modal-dialog {
@@ -787,6 +793,19 @@ button {
         order: 2;
     }
 }
+.button-text {
+    position: relative;
+}
+.button-text-counter {
+    position: absolute;
+    content: "";
+    top: -17px;
+    right: -23px;
+    padding: 1px 8px;
+    background: rgb(228, 228, 228);
+    border-radius: 50%;
+    z-index: 2;
+}
 
 @media (max-width: 480px) {
     .button-text {
@@ -850,5 +869,28 @@ button {
 
     .footer-link:not(:last-child) {
         margin-right: 0;
+    }
+}
+
+.show {
+    animation-name: show;
+    animation-duration: 1s;
+}
+@keyframes show {
+    from {
+        opacity: 0.1;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+
+@keyframes hide {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
     }
 }
